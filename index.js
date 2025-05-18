@@ -96,8 +96,8 @@ const dareCommands = [
 ];
 
 app.get('/', (req, res) => {
-  const randomIndex = Math.floor(Math.random() * truthQuestions.length);
-  const question = truthQuestions[randomIndex];
+  const randomIndex = Math.floor(Math.random() * dareCommands.length);
+  const question = dareCommands[randomIndex];
   res.json({
     data: {
       question: question
@@ -107,5 +107,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Truth service is running on port ${PORT}`);
+  console.log(`Dare service is running on port ${PORT}`);
 });
