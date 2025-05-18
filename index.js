@@ -96,13 +96,16 @@ const dareCommands = [
 ];
 
 app.get('/', (req, res) => {
-  const randomIndex = Math.floor(Math.random() * dareCommands.length);
-  const dare = dareCommands[randomIndex];
-  res.send(dare);
+  const randomIndex = Math.floor(Math.random() * truthQuestions.length);
+  const question = truthQuestions[randomIndex];
+  res.json({
+    data: {
+      question: question
+    }
+  });
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Dare service is running on port ${PORT}`);
+  console.log(`Truth service is running on port ${PORT}`);
 });
-  
